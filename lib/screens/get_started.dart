@@ -61,27 +61,32 @@ class GetStartedScreen extends StatelessWidget {
                   SizedBox(
                     height: 25.0,
                   ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color(0xFF79D6DD),
-                        width: 5.0,
-                        style: BorderStyle.solid,
+                  InkWell(
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xFF79D6DD),
+                          width: 5.0,
+                          style: BorderStyle.solid,
+                        ),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20.0),
+                          bottomLeft: Radius.circular(20.0),
+                        ),
                       ),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        bottomLeft: Radius.circular(20.0),
+                      child: Text(
+                        'GET STARTED',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: Colors.grey.shade400,
+                        ),
                       ),
                     ),
-                    child: Text(
-                      'GET STARTED',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        color: Colors.grey.shade400,
-                      ),
-                    ),
+                    onTap: () {
+                      Navigator.of(context).pushReplacementNamed('/home');
+                    },
                   ),
                 ],
               ),
